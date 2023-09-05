@@ -1,7 +1,7 @@
 import { Entity, Column, PrimaryColumn } from 'typeorm';
 
 @Entity()
-export class Mode {
+export class Modes {
   @Column({ nullable: true, name: 'survey_result_id' })
   surveyResultId: string;
 

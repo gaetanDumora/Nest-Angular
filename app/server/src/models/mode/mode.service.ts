@@ -1,16 +1,16 @@
 import { Injectable, Inject } from '@nestjs/common';
 import { Repository } from 'typeorm';
-import { Mode } from './mode.entity';
+import { Modes } from './mode.entity';
 import { PROVIDERS } from 'src/common/constants';
 
 @Injectable()
 export class ModeService {
   constructor(
     @Inject(PROVIDERS.modeRepo)
-    private modeRepository: Repository<Mode>,
+    private modeRepository: Repository<Modes>,
   ) {}
 
-  async findAll(): Promise<Mode[]> {
+  async findAll(): Promise<Modes[]> {
     return this.modeRepository.find();
   }
 }

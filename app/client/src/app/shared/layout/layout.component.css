@@ -1,0 +1,21 @@
+.layout {
+  background-color: rgb(42, 39, 39);
+  color: honeydew;
+  display: flex;
+  justify-content: center;
+  padding: 2em;
+}
+.nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: rgb(213, 213, 213);
+  position: sticky;
+  top: 0;
+}
+a {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: larger;
+  font-weight: 700;
+  text-decoration: none;
+  color: inherit;
+}

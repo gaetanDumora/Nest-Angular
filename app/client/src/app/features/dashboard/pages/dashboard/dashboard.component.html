@@ -1,0 +1,60 @@
+<ng-container *ngIf="stats; else loadingTemplate">
+  <div style="text-align: center">
+    <h1>Some insights about users</h1>
+    <div class="container">
+      <div class="chart-wrapper">
+        <div class="chart-description">
+          <h3>Gender distribution</h3>
+          <p>Show how users are distributed according their gender</p>
+        </div>
+        <app-chart
+          *ngIf="stats"
+          [chartType]="'doughnut'"
+          [chartLabel]="'genders'"
+          [chartData]="stats.genders"
+        ></app-chart>
+      </div>
+      <div class="chart-wrapper">
+        <div class="chart-description">
+          <h3>Users creation over time</h3>
+          <p>
+            Indicates the number of users created in the application each month
+          </p>
+        </div>
+        <app-chart
+          *ngIf="stats"
+          [chartType]="'line'"
+          [chartLabel]="'usersCreation'"
+          [chartData]="stats.usersCreation"
+        ></app-chart>
+      </div>
+      <div class="chart-wrapper">
+        <div class="chart-description">
+          <h3>Work situations distribution</h3>
+          <p>Show how users are distributed according their work situations</p>
+        </div>
+        <app-chart
+          *ngIf="stats"
+          [chartType]="'bar'"
+          [chartLabel]="'workSituations'"
+          [chartData]="stats.workSituations"
+        ></app-chart>
+      </div>
+      <div class="chart-wrapper">
+        <div class="chart-description">
+          <h3>Degrees distribution</h3>
+          <p>Show how users are distributed according their degrees</p>
+        </div>
+        <app-chart
+          *ngIf="stats"
+          [chartType]="'bar'"
+          [chartLabel]="'degrees'"
+          [chartData]="stats.degrees"
+        ></app-chart>
+      </div>
+    </div>
+    <h1>Some insights about modes</h1>
+    <p>Comming soon...🤷🏻</p>
+  </div>
+</ng-container>
+<ng-template #loadingTemplate>...Loading...</ng-template>
