@@ -1,19 +1,5 @@
-.container {
-  display: grid;
-  grid-template-columns: 400px 400px;
-  column-gap: 10px;
-  row-gap: 15px;
-}
-
-.chart-wrapper {
-  align-self: center;
-  padding: 1em;
-  border: 1px solid rgb(189, 185, 185);
-  border-radius: 20px;
-}
 .chart-description {
-  font-size: smaller;
   font-size: small;
   line-height: 12px;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  padding: 1em;
 }
