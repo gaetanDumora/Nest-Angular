@@ -39,6 +39,15 @@ CREATE TABLE survey_results (
 	created_at TIMESTAMP
 );
 
+CREATE TYPE task_status_label AS ENUM('PENDING','PROGRESS', 'DONE');
+CREATE TABLE task (
+	id SERIAL PRIMARY KEY,
+	created_at TIMESTAMP DEFAULT NOW(),
+	task_name VARCHAR ( 50 ) NOT NULL,
+	user_id VARCHAR ( 50 ),
+	task_status task_status_label DEFAULT 'PENDING'
+);
+
 COPY "user" (id, createdAt, gender, birthYear, degree, workSituation) FROM '/var/lib/postgresql/csvs/Users.csv' DELIMITER ',' CSV HEADER;
 COPY "modes" (survey_result_id , workoscope_result_id , scores) FROM '/var/lib/postgresql/csvs/Modes.csv' DELIMITER ',' CSV HEADER;
 COPY "questions" (step_id , step_title , step_index , question_id , question_index , question_label) FROM '/var/lib/postgresql/csvs/Questions.csv' DELIMITER ',' CSV HEADER;

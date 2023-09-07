@@ -1,0 +1,25 @@
+<div
+  class="rounded border-opacity-20 border-solid border-2 border-sky-500 p-2 mt-2 bg-sky-100 text-sm text-slate-700"
+>
+  <div class="flex justify-between">
+    <div class="text-xs text-left">
+      <p>Task name: {{ task.name }}</p>
+      <p>Created at: {{ task.createdAt | date : "MM/dd/yy" }}</p>
+      <p>By: {{ task.userId || "you" }}</p>
+    </div>
+
+    <div>
+      <button
+        class="rounded border-opacity-20 border-solid border-2 border-sky-500"
+        type="button"
+        (click)="removeTask()"
+      >
+        🗑️
+      </button>
+    </div>
+  </div>
+  <div class="flex justify-around">
+    <button type="button">⬅️</button>
+    <button type="button">➡️</button>
+  </div>
+</div>

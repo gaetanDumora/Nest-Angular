@@ -1,0 +1,40 @@
+<ng-container *ngIf="tasks; else elseTemplate">
+  <div class="flex justify-center">
+    <div class="flex flex-col w-3/4">
+      <!-- Create tasks -->
+      <div class="sticky top-8 self-center">
+        <app-task-input (refreshBoard)="onRefreshBoard()"></app-task-input>
+      </div>
+
+      <!-- Board -->
+      <div class="flex space-x-4 mt-4 h-screen text-center">
+        <div
+          class="w-1/3 rounded border-opacity-20 border-solid border-2 border-sky-500 p-2"
+        >
+          <h1 class="border-b-2 border-sky-500 border-opacity-20">Backlog</h1>
+          <ng-container *ngFor="let task of tasks">
+            <app-task-card
+              (removeTaskFromBoard)="onDeleteTask($event)"
+              [task]="task"
+            ></app-task-card>
+          </ng-container>
+        </div>
+        <div
+          class="w-1/3 rounded border-opacity-20 border-solid border-2 border-sky-500 p-2"
+        >
+          <h1 class="border-b-2 border-sky-500 border-opacity-20">
+            In-progress
+          </h1>
+        </div>
+        <div
+          class="w-1/3 rounded border-opacity-20 border-solid border-2 border-sky-500 p-2"
+        >
+          <h1 class="border-b-2 border-sky-500 border-opacity-20">Done</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+<ng-template #elseTemplate
+  ><div class="text-center h-screen mt-20">...Loading...</div>
+</ng-template>

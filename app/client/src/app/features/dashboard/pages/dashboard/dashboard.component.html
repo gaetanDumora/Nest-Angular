@@ -1,73 +1,76 @@
 <ng-container *ngIf="stats; else loadingTemplate">
-  <div class="text-center">
-    <h1 class="mb-4 text-sky-500 font-bold text-xl text-opacity-70">
-      Some insights about users
-    </h1>
-    <div class="md:columns-2 sm:columns-1 space-y-4">
-      <div
-        class="rounded border-opacity-20 border-solid border-2 border-sky-500 p-4"
-      >
-        <div class="text-sky-500 font-bold text-sm text-opacity-70">
-          <h3>Gender distribution</h3>
-          <p>Show how users are distributed according their gender</p>
+  <div class="flex justify-center">
+    <div class="text-center w-3/4">
+      <h1 class="mb-4 text-xl text-opacity-70">Some insights about users</h1>
+      <div class="md:columns-2 sm:columns-1 space-y-4">
+        <div
+          class="rounded border-opacity-20 border-solid border-2 border-sky-500 p-4"
+        >
+          <div class="text-sm text-opacity-70">
+            <h3>Gender distribution</h3>
+            <p>Show how users are distributed according their gender</p>
+          </div>
+          <app-chart
+            *ngIf="stats"
+            [chartType]="'doughnut'"
+            [chartLabel]="'genders'"
+            [chartData]="stats.genders"
+          ></app-chart>
         </div>
-        <app-chart
-          *ngIf="stats"
-          [chartType]="'doughnut'"
-          [chartLabel]="'genders'"
-          [chartData]="stats.genders"
-        ></app-chart>
-      </div>
-      <div
-        class="rounded border-opacity-20 border-solid border-2 border-sky-500 p-4"
-      >
-        <div class="text-sky-500 font-bold text-sm text-opacity-70">
-          <h3>Users creation over time</h3>
-          <p>
-            Indicates the number of users created in the application each month
-          </p>
+        <div
+          class="rounded border-opacity-20 border-solid border-2 border-sky-500 p-4"
+        >
+          <div class="text-sm text-opacity-70">
+            <h3>Users creation over time</h3>
+            <p>
+              Indicates the number of users created in the application each
+              month
+            </p>
+          </div>
+          <app-chart
+            *ngIf="stats"
+            [chartType]="'line'"
+            [chartLabel]="'usersCreation'"
+            [chartData]="stats.usersCreation"
+          ></app-chart>
         </div>
-        <app-chart
-          *ngIf="stats"
-          [chartType]="'line'"
-          [chartLabel]="'usersCreation'"
-          [chartData]="stats.usersCreation"
-        ></app-chart>
-      </div>
-      <div
-        class="rounded border-opacity-20 border-solid border-2 border-sky-500 p-4"
-      >
-        <div class="text-sky-500 font-bold text-sm text-opacity-70">
-          <h3>Work situations distribution</h3>
-          <p>Show how users are distributed according their work situations</p>
+        <div
+          class="rounded border-opacity-20 border-solid border-2 border-sky-500 p-4"
+        >
+          <div class="text-sm text-opacity-70">
+            <h3>Work situations distribution</h3>
+            <p>
+              Show how users are distributed according their work situations
+            </p>
+          </div>
+          <app-chart
+            *ngIf="stats"
+            [chartType]="'bar'"
+            [chartLabel]="'workSituations'"
+            [chartData]="stats.workSituations"
+          ></app-chart>
         </div>
-        <app-chart
-          *ngIf="stats"
-          [chartType]="'bar'"
-          [chartLabel]="'workSituations'"
-          [chartData]="stats.workSituations"
-        ></app-chart>
-      </div>
-      <div
-        class="rounded border-opacity-20 border-solid border-2 border-sky-500 p-4"
-      >
-        <div class="text-sky-500 font-bold text-sm text-opacity-70">
-          <h3>Degrees distribution</h3>
-          <p>Show how users are distributed according their degrees</p>
+        <div
+          class="rounded border-opacity-20 border-solid border-2 border-sky-500 p-4"
+        >
+          <div class="text-sm text-opacity-70">
+            <h3>Degrees distribution</h3>
+            <p>Show how users are distributed according their degrees</p>
+          </div>
+          <app-chart
+            *ngIf="stats"
+            [chartType]="'bar'"
+            [chartLabel]="'degrees'"
+            [chartData]="stats.degrees"
+          ></app-chart>
         </div>
-        <app-chart
-          *ngIf="stats"
-          [chartType]="'bar'"
-          [chartLabel]="'degrees'"
-          [chartData]="stats.degrees"
-        ></app-chart>
       </div>
-    </div>
 
-    <h1 class="mt-4 text-sky-500 font-bold text-xl text-opacity-70">
-      Some insights about modes
-    </h1>
-    <p>Comming soon...🤷🏻</p>
+      <h1 class="mt-4 text-xl text-opacity-70">Some insights about modes</h1>
+      <p>Comming soon...🤷🏻</p>
+    </div>
   </div>
 </ng-container>
-<ng-template #loadingTemplate>...Loading...</ng-template>
+<ng-template #loadingTemplate
+  ><div class="text-center h-screen mt-20">...Loading...</div></ng-template
+>

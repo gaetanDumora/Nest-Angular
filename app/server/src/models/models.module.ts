@@ -4,6 +4,7 @@ import { QuestionModule } from './question/question.module';
 import { ModeModule } from './mode/mode.module';
 import { QuestionResultsModule } from './question-results/question-results.module';
 import { SurveyResultsModule } from './survey-results/survey-results.module';
+import { TaskModule } from './task/task.module';
 
 @Module({
   imports: [
@@ -12,6 +13,7 @@ import { SurveyResultsModule } from './survey-results/survey-results.module';
     ModeModule,
     QuestionResultsModule,
     SurveyResultsModule,
+    TaskModule,
   ],
 })
 export class ModelsModule {}

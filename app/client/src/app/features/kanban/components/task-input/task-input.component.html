@@ -1,0 +1,16 @@
+<div class="space-x-4">
+  <input
+    #taskInput
+    class="text-black rounded border-opacity-20 border-solid border-2 border-sky-500 p-2"
+    type="text"
+    (keyup.enter)="addTask(taskInput.value); taskInput.value = ''"
+    (blur)="addTask(taskInput.value); taskInput.value = ''"
+  />
+  <button
+    class="rounded border-opacity-20 border-solid border-2 border-sky-500 p-2"
+    type="button"
+    (click)="addTask(taskInput.value)"
+  >
+    Add Task
+  </button>
+</div>

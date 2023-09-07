@@ -40,7 +40,7 @@ export class UserService {
         'COUNT(*) AS num',
       ])
       .groupBy("TO_CHAR(createdat, 'Month YYYY')")
-      .orderBy("TO_CHAR(createdat, 'Month YYYY')")
+      .orderBy('MIN(user.createdat)', 'ASC')
       .getRawMany();
   }
 }
